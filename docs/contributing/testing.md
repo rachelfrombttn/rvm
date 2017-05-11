@@ -2,9 +2,7 @@
 
 ## Fetch and try test suite on your rvm installation
 
-Note that the [`vboxtest`](docs/vm_tests.md) approach is now outdated.
-It's better to use the
-[`rvm-test`](https://github.com/rvm/rvm-test/) test suite
+To test RVM install you should use [`rvm-test`](https://github.com/rvm/rvm-test/) test suite
 which lives in a separate git submodule.  (It's separate in order to
 allow reuse when hacking on rvm2).
 

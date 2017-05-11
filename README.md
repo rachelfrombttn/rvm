@@ -214,9 +214,7 @@ character like `rvm [command] > output.txt`.
 
 ## Contributing
 
-You are very warmly welcome to help. Please follow our [contribution guidelines](CONTRIBUTING.md) 
-
-Any and all contributions offered in any form, past present or future are understood to be in complete agreement and acceptance with the [Apache License](LICENSE) v2.0.
+You are very warmly welcome to help. Please follow our [contribution guidelines](docs/contributing/README.md) 
 
 ## License
 

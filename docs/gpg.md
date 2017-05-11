@@ -1,8 +1,6 @@
 ## README
 
 At RVM we use GPG to sign files/releases - for security.
-This docs is a placeholder where we will be adding information on how to
-setup and use GPG, both for developers and users.
 
 #### Note: gpg vs. gpg2
 
@@ -42,28 +40,3 @@ run our code - trust our keys.
 
 
 5. RVM automates GPG for updates to ensure security, no manual steps are needed after installation.
-
-
-## For developers
-
-1. [Creating GPG Keys](https://alexcabal.com/creating-the-perfect-gpg-keypair/)
-
-2. [Extending key expiration date](https://www.g-loaded.eu/2010/11/01/change-expiration-date-gpg-key/)
-
-3. signing installer:
-
-        gpg --armor --sign-detach binscripts/rvm-installer
-
-
-4. signing release (follow on screen instructions):
-
-        bash sign-releases.sh
-
-
-5. places to update when adding new developer key:
-
-    * <https://github.com/rvm/rvm-site/tree/master/content> - add public key (`gpg --armor --export developer_name > developer_name.asc`)
-    * <https://github.com/rvm/rvm-site/blob/master/content/index.haml> - section: `Install RVM`
-    * <https://github.com/rvm/rvm-site/blob/master/content/rvm/install.md> - beginning
-    * <https://github.com/rvm/rvm/blob/master/binscripts/rvm-installer> - function: `verify_package_pgp`
-    * <https://github.com/rvm/rvm/blob/master/scripts/functions/cli> - function: `verify_package_pgp`

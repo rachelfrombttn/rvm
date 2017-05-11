@@ -1,14 +1,14 @@
-# general
+# Code formatting
 
-1. Try to make code readable, it's the most important rule,
-turn your eyes away from code and look on it again,
-can you really fast understand it - if no - reformat to make it better.
+## General
 
+1. Try to make code readable, it's the most important rule, turn your eyes away from code and look on it again, can you really fast understand it - if no - reformat to make it better.
 2. Avoid semicolons, just because they make code harder to read (look rule 1).
 
-# variables
+## Variables
 
-## defining
+### Defining
+
 ```bash
 typeset var          # avid local - it breaks code in some rare cases
 typeset -a arr
@@ -18,7 +18,8 @@ typeset -x important # the same export, just for consistency
 
 Variables defined in one local in function are available in all other functions called by it.
 
-## numeric variables comparison
+### Numeric variables comparison
+
 ```bash
 : variable:${variable:=0} # make sure it is set and simplifies debugging
 (( variable ))      # when not zero
@@ -26,7 +27,7 @@ Variables defined in one local in function are available in all other functions 
 : $(( variable++ )) # increase
 ```
 
-## string variables comparison
+### String variables comparison
 ```bash
 [[ -n "${var:-}" ]]       # var is set
 [[ "${var:-}" == "bla" ]] # var equals bla
@@ -36,7 +37,7 @@ Variables defined in one local in function are available in all other functions 
 ]]
 ```
 
-## multiple values check
+### Multiple values check
 ```
 case "$action" in
   (show)
@@ -51,7 +52,7 @@ case "$action" in
 esac
 ```
 
-## dynamic invocation
+### Dynamic invocation
 ```bash
 _show(){ cat $1 || return $?; }
 _edit(){ ${EDITOR:-vim} $1 || return $?; }
@@ -64,9 +65,10 @@ case $? in
 esac
 ```
 
-# if's
+## Conditionals
 
-## dens form for short statements / commands
+### Dens form for short statements / commands
+
 ```bash
 if [[ -n "${bla:-}" ]]
 then x=bla
@@ -74,7 +76,8 @@ else x=
 fi
 ```
 
-## sparse form for long statements / more commands
+### Sparse form for long statements / more commands
+
 ```bash
 if
   [[ -n "${bla_asd_sf_affdfs_dsf_sdf_sdf:-}" ]] ||
@@ -87,7 +90,8 @@ else
 fi
 ```
 
-## mixed for large else
+### Mixed for large else
+
 ```bash
 if [[ -n "${bla:-}" ]]
 then x=bla
@@ -98,7 +102,8 @@ else
 fi
 ```
 
-## just else
+### Just else
+
 ```bash
 [[ -n "${bla:-}" ]] ||
 {
@@ -108,9 +113,10 @@ fi
 }
 ```
 
-# loops
+## Loops
 
-## params parsing
+### Params parsing
+
 ```bash
 while
   (( $# ))
@@ -136,7 +142,8 @@ do
 done
 ```
 
-## params iterate
+### Params iterate
+
 ```bash
 # the - in "$@" - is default
 for __param
