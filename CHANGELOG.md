@@ -8,6 +8,7 @@
 * Add support for elementary OS [\#3935](https://github.com/rvm/rvm/issues/3935)
 * Add support for Deepin (based on Debian) [\#3999](https://github.com/rvm/rvm/issues/3999) 
 * Simplified OS detection mechanism [\#3938](https://github.com/rvm/rvm/pull/3938)
+* Use fuzzy version match for `rvm remove` [\#4028](https://github.com/rvm/rvm/pull/4028)
 
 #### Bug fixes:
 * Use actual executable test instead of mount|grep noexec for robust noexec detection [\#3933](https://github.com/rvm/rvm/pull/3933)
@@ -25,6 +26,7 @@
 * Do not unset rvm_pretty_print_flag [\#3946](https://github.com/rvm/rvm/issues/3946)
 * Patch Ruby 2.3.4 with missing rb_thread_fd_close [\#4008](https://github.com/rvm/rvm/issues/4008)
 * Unknown subcommand `rvm gemset clear` [\#4004](https://github.com/rvm/rvm/issues/4004)
+* Skip rubygems install for ruby-head [\#4022](https://github.com/rvm/rvm/pull/4022)
 
 #### Upgraded Ruby interpreters:
 * Add support for Rubinius 3.72 [\#3934](https://github.com/rvm/rvm/pull/3934), 3.73 [\#3979](https://github.com/rvm/rvm/pull/3979), 3.74 [\#3994](https://github.com/rvm/rvm/pull/3994), 3.75 [\#4002](https://github.com/rvm/rvm/pull/4002), 3.76 and 3.77 [\#4016](https://github.com/rvm/rvm/pull/4016)
@@ -34,6 +36,7 @@
 * Add support for Ruby 2.2.7 [\#3970](https://github.com/rvm/rvm/pull/3970)
 * Add support for Ruby 2.3.4 [\#3973](https://github.com/rvm/rvm/pull/3973)
 * Upgrade RubyGems to 2.6.12 [\#4018](https://github.com/rvm/rvm/pull/4018)
+* Add support for JRuby 1.7.27 [\#4026](https://github.com/rvm/rvm/pull/4026)
 
 #### Binaries:
 * Ubuntu x64 binary for Ruby 2.4.1 [\#3965](https://github.com/rvm/rvm/issues/3965)
