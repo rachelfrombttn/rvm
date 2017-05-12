@@ -34,6 +34,6 @@ Whenever you make a change to `binscripts/rvm-installer`, you should also update
 
 ## Signing release
 
-To sign the installer follow on screen instructions:
+To sign the release follow on screen instructions:
 
         bash sign-releases.sh
