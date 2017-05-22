@@ -15,7 +15,7 @@ After creating or changing your GPG key you need to reference it in few places:
 
 2. Export your public key to the root of [rvm-site](https://github.com/rvm/rvm-site)
 
-        gpg --armor --export developer_name > developer_name.asc
+        gpg --armor --export NAME > NAME.asc
 
 3. Add your key signature in following sections of the documentation
 
@@ -30,7 +30,7 @@ It is a good practice to set an expiration date on your GPG key. Before signing 
 
 Whenever you make a change to `binscripts/rvm-installer`, you should also update the installer signature and include it in your pull request:
 
-        gpg --armor --sign-detach binscripts/rvm-installer
+        gpg --armor --detach-sig binscripts/rvm-installer
 
 ## Signing release
 

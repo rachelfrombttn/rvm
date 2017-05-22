@@ -8,7 +8,7 @@ Any and all contributions offered in any form, past present or future are unders
 
 * [Local development environment](local.md)
 * [Adding new Ruby version](new-ruby-version.md)
-* [Signing releases](sign-releases.md)
+* [Signing releases](signing-releases.md)
 * [Testing](testing.md)
 
 ## RVM 2.0 work announcement
