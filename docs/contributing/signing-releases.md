@@ -32,7 +32,7 @@ Whenever you make a change to `binscripts/rvm-installer`, you should also update
 
     rm binscripts/rvm-installer.asc && gpg --armor --detach-sig binscripts/rvm-installer
         
-To add your signature to already correctly signed installer:
+To add second (yours) signature to already correctly signed installer:
 
     mv binscripts/rvm-installer.asc binscripts/rvm-installer.asc.org
     gpg --armor --sign-detach binscripts/rvm-installer
