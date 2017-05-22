@@ -30,10 +30,17 @@ It is a good practice to set an expiration date on your GPG key. Before signing 
 
 Whenever you make a change to `binscripts/rvm-installer`, you should also update the installer signature and include it in your pull request:
 
-        gpg --armor --detach-sig binscripts/rvm-installer
+    rm binscripts/rvm-installer.asc && gpg --armor --detach-sig binscripts/rvm-installer
+        
+To add your signature to already correctly signed installer:
+
+    mv binscripts/rvm-installer.asc binscripts/rvm-installer.asc.org
+    gpg --armor --sign-detach binscripts/rvm-installer
+    cat binscripts/rvm-installer.asc.org >> binscripts/rvm-installer.asc
+    rm binscripts/rvm-installer.asc.org
 
 ## Signing release
 
 To sign the release follow on screen instructions:
 
-        bash sign-releases.sh
+    bash sign-releases.sh
