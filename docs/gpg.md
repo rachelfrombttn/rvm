@@ -1,42 +1,40 @@
-## README
+# Secure RVM installation
 
-At RVM we use GPG to sign files/releases - for security.
+At RVM we use GPG to sign files and releases. Whenever you upgrade RVM, we automatically check if packages downloaded from the internet are authentic. This way we keep you secure from unauthorized modifications.
 
 #### Note: gpg vs. gpg2
 
-Both should be fine, sometimes `gpg` has problems downloading keys from 
-server, it might be better to work with `gpg2` if it's available for 
-your's system.
+Both versions should be fine, however we noticed that sometimes `gpg` has problems downloading keys from 
+server. Usage of `gpg2` is recommended, whenever it is available for your system.
 
-## For users
-
-Make sure to only trust the keys of people you trust - if you trust to 
-run our code - trust our keys.
-
-1. import keys:
+## Import RVM keys
+  
+All you have to do to enable verified installations, is to import our developer's GPG keys:
 
         gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 # mpapis@gmail.com
-
-
-2. refresh keys:
-
-    This step helps to ensure none of the developer keys got revoked,
-    it's best to do it periodically - or just add it to cron.
-
-        gpg2 --refresh-keys
+        gpg2 --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB # piotr.kuczynski@gmail.com
 
 
 3. trust developers:
 
         echo 409B6B1796C275462A1703113804BB82D39DC0E3:6: | gpg2 --import-ownertrust # mpapis@gmail.com
+        
+From now on, you installations will stay secure.
 
+## Periodically refresh keys
 
-4. verified installation:
+To ensure that none of the keys has been revoked, it is a good practice to check them from time to time. You might want to run this as a regular cron job.
 
-        \curl -sSL https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer     -o rvm-installer &&
+        gpg2 --refresh-keys
+
+## Secure initial RVM installation
+
+RVM will only verify upgrades and following installations once it is active in your system. If you want to secure the initial installation instead of using plain `curl`, run following command:
+
+        \curl -sSL https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer -o rvm-installer &&
         \curl -sSL https://raw.githubusercontent.com/rvm/rvm/master/binscripts/rvm-installer.asc -o rvm-installer.asc &&
         \gpg2 --verify rvm-installer.asc &&
         \bash rvm-installer
 
 
-5. RVM automates GPG for updates to ensure security, no manual steps are needed after installation.
+
