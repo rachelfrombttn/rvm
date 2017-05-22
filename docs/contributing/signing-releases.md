@@ -15,12 +15,15 @@ After creating or changing your GPG key you need to reference it in few places:
 
 2. Export your public key to the root of [rvm-site](https://github.com/rvm/rvm-site)
 
-        gpg --armor --export NAME > NAME.asc
+
+    gpg --armor --export NAME > NAME.asc
 
 3. Add your key signature in following sections of the documentation
 
-    * Index: [Install RVM](https://github.com/rvm/rvm-site/blob/master/content/index.haml)
-    * Install: [Install GPG keys](https://github.com/rvm/rvm-site/blob/master/content/rvm/install.md)
+    * [Index](https://github.com/rvm/rvm-site/blob/master/content/index.haml)
+    * [Install](https://github.com/rvm/rvm-site/blob/master/content/rvm/install.md)
+    * [Security](https://github.com/rvm/rvm-site/blob/master/content/rvm/security.md)
+    * [Vagrant](https://github.com/rvm/rvm-site/blob/master/content/integration/vagrant.md)
 
 ### Expiration date
 
