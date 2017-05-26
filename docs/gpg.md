@@ -11,8 +11,16 @@ server. Usage of `gpg2` is recommended, whenever it is available for your system
   
 All you have to do to enable verified installations, is to import our developer's GPG keys:
 
-        gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 # mpapis@gmail.com
-        gpg2 --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB # piotr.kuczynski@gmail.com
+        gpg --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 # mpapis@gmail.com
+        gpg --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB # piotr.kuczynski@gmail.com
+
+In case you run into troubles use different key server:
+
+        gpg --keyserver hkp://keys.gnupg.net --recv-keys ...
+
+Example servers:
+* hkp://keys.gnupg.net
+* hkp://pgp.mit.edu
 
 
 3. trust developers:
